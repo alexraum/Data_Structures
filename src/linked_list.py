@@ -34,3 +34,13 @@ class LinkedList:
             curr = curr.next
             count += 1
         return curr.data
+
+    def set(self, idx, elem):
+        if ((idx < 0) or (idx > (self.size()-1))):
+            raise IndexError
+        curr = self.front
+        count = 0
+        while count != idx:
+            curr = curr.next
+            count += 1
+        curr.data = elem
