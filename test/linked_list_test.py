@@ -60,3 +60,16 @@ def test_add():
     assert list_2.get(1) == "blueberry"
     assert list_2.get(2) == "cherry"
     assert list_2.get(list_2.size()-1) == "dragonfruit"
+
+def test_remove():
+    list_1 = LinkedList(Node("apple"))
+    list_1.add(1, "blueberry")
+    list_1.add(2, "cherry")
+    list_1.add(3, "dragonfruit")
+    list_1.add(4, "fig")
+
+    assert list_1.remove(0) == "apple"
+    assert list_1.remove(1) == "cherry"
+    assert list_1.remove(list_1.size()-1) == "fig"
+    assert list_1.remove(0) == "blueberry"
+    assert list_1.remove(list_1.size()-1) == "dragonfruit"
