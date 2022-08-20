@@ -8,8 +8,8 @@ import pytest
 
 def test_size():
     list_1 = LinkedList()
-    list_2 = LinkedList("apple")
-    list_3 = LinkedList("apple")
+    list_2 = LinkedList(Node("apple"))
+    list_3 = LinkedList(Node("apple"))
     list_3.add(list_3.size(), "blueberry")
 
     assert list_1.size() == 0
@@ -18,14 +18,14 @@ def test_size():
 
 def test_is_empty():
     list_1 = LinkedList()
-    list_2 = LinkedList("apple")
+    list_2 = LinkedList(Node("apple"))
 
     assert list_1.is_empty() is True
     assert list_2.is_empty() is False
 
 def test_get():
-    list_1 = LinkedList("apple")
-    list_2 = LinkedList("apple")
+    list_1 = LinkedList(Node("apple"))
+    list_2 = LinkedList(Node("apple"))
     list_2.add(list_2.size(), "cherry")
     list_2.add(list_2.size()-1, "blueberry")
 
@@ -35,8 +35,8 @@ def test_get():
     assert list_2.get(list_2.size()-1) == "cherry"
 
 def test_set():
-    list_1 = LinkedList("apple")
-    list_2 = LinkedList("apple")
+    list_1 = LinkedList(Node("apple"))
+    list_2 = LinkedList(Node("apple"))
     list_2.add(list_2.size(), "blueberry")
 
     list_1.set(0, "orange")
@@ -50,7 +50,7 @@ def test_set():
 def test_add():
     list_1 = LinkedList()
     list_1.add(0, "apple")
-    list_2 = LinkedList("cherry")
+    list_2 = LinkedList(Node("cherry"))
     list_2.add(0, "apple")
     list_2.add(2, "dragonfruit")
     list_2.add(1, "blueberry")
