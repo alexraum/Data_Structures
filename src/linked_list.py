@@ -2,9 +2,9 @@
 
 class Node:
 
-    def __init__(self, data):
+    def __init__(self, data, next=None):
         self.data = data
-        self.next = None
+        self.next = next
 
 
 class LinkedList:
@@ -44,3 +44,17 @@ class LinkedList:
             curr = curr.next
             count += 1
         curr.data = elem
+
+    def add(self, idx, elem):
+        if ((idx < 0) or (idx > (self.size()))):
+            raise IndexError
+        if idx == 0:
+            node = Node(elem, self.front)
+            self.front = node
+        else:
+            curr = self.front
+            count = 0
+            while count < (idx-1):
+                curr = curr.next
+                count += 1
+            curr.next = Node(elem, curr.next)
