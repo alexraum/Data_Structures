@@ -6,15 +6,12 @@ class Node:
         self.data = data
         self.next = next
 
-
 class LinkedList:
 
     def __init__(self, data=None):
-        self.front = Node(data)
+        self.front = data
 
     def size(self):
-        if self.front.data == None:
-            return 0
         curr = self.front
         count = 0
         while curr is not None:
@@ -58,3 +55,19 @@ class LinkedList:
                 curr = curr.next
                 count += 1
             curr.next = Node(elem, curr.next)
+
+    def remove(self, idx):
+        if ((idx < 0) or (idx > (self.size()-1))):
+            raise IndexError
+        if idx == 0:
+            val = self.front
+            self.front = self.front.next
+        else:
+            curr = self.front
+            count = 0
+            while count < (idx-1):
+                curr = curr.next
+                count += 1
+            val = curr.next
+            curr.next = curr.next.next
+        return val
