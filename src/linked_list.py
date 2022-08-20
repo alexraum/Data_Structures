@@ -60,7 +60,7 @@ class LinkedList:
         if ((idx < 0) or (idx > (self.size()-1))):
             raise IndexError
         if idx == 0:
-            val = self.front
+            val = self.front.data
             self.front = self.front.next
         else:
             curr = self.front
@@ -68,6 +68,6 @@ class LinkedList:
             while count < (idx-1):
                 curr = curr.next
                 count += 1
-            val = curr.next
+            val = curr.next.data
             curr.next = curr.next.next
         return val
