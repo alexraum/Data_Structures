@@ -33,3 +33,17 @@ def test_get():
     assert list_1.get(0) == "apple"
     assert list_2.get(0) == "apple"
     assert list_2.get(1) == "blueberry"
+
+def test_set():
+    list_1 = LinkedList("apple")
+    list_2 = LinkedList("apple")
+    node_1 = Node("blueberry")
+    list_2.front.next = node_1
+
+    list_1.set(0, "orange")
+    list_2.set(0, "banana")
+    list_2.set(1, "strawberry")
+
+    assert list_1.get(0) == "orange"
+    assert list_2.get(0) == "banana"
+    assert list_2.get(1) == "strawberry"
