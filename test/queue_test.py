@@ -26,3 +26,20 @@ def test_enqueue():
     queue.enqueue("apple")
 
     assert queue.size() == 1
+
+def test_first():
+    queue = Queue()
+    queue.enqueue("apple")
+    queue.enqueue("blueberry")
+    queue.enqueue("cherry")
+
+    assert queue.first() == "apple"
+
+def test_dequeue():
+    queue = Queue()
+    queue.enqueue("apple")
+    queue.enqueue("blueberry")
+    queue.enqueue("cherry")
+
+    assert queue.dequeue() == "apple"
+    assert queue.size() == 2
