@@ -1,9 +1,8 @@
-"""Defines unit tests for linked_list.py"""
+"""Defines unit tests for the linked list abstract data type"""
 from src.linked_list import (
     Node,
     LinkedList
 )
-import pytest
 
 
 def test_size():
