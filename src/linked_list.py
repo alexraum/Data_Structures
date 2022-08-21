@@ -8,8 +8,8 @@ class Node:
 
 class LinkedList:
 
-    def __init__(self, data=None):
-        self.front = data
+    def __init__(self, node=None):
+        self.front = node
 
     def size(self):
         curr = self.front
