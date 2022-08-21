@@ -1,4 +1,4 @@
-"""Defines state and behavior for a linked list"""
+"""Defines the state and behavior for a linked list abstract data type"""
 
 class Node:
 
