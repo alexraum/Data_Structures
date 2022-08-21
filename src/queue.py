@@ -12,4 +12,11 @@ class Queue():
     def is_empty(self):
         return self.linked_list.is_empty()
 
-    
+    def enqueue(self, elem):
+        self.linked_list.add(self.linked_list.size(), elem)
+
+    def first(self):
+        return self.linked_list.get(0)
+
+    def dequeue(self):
+        return self.linked_list.remove(0)
