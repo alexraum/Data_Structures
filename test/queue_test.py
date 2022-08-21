@@ -18,8 +18,8 @@ def test_is_empty():
     queue_2 = Queue()
     queue_2.enqueue("apple")
 
-    assert queue_1.is_empty() == True
-    assert queue_2.is_empty() == False
+    assert queue_1.is_empty() is True
+    assert queue_2.is_empty() is False
 
 def test_enqueue():
     queue = Queue()
